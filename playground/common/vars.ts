@@ -1,2 +1,2 @@
-export const SCREEN_WDITH = 800;
-export const SCREEN_HEIGHT = 600;
+export const SCREEN_WIDTH_PLACEHOLDER = 800;
+export const SCREEN_HEIGHT_PLACEOHLDER = 600;

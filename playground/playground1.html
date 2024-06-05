@@ -19,13 +19,26 @@
 <div id="root"></div>
 
 <script type="text/babel">
-    import PlayAgainButton from './components/PlayAgainButton';
-    import SCREEN_WIDTH from './common/vars';
-    import SCREEN_HEIGHT from './common/vars';
+    const SCREEN_WIDTH = 800;
+    const SCREEN_HEIGHT = 600;
+
+    class PlayAgainButton extends React.Component {
+        render() {
+            const { x, y, url, text } = this.props;
+            return (
+                <button 
+                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded border border-solid border-green-700"
+                    style={{ position: 'absolute', top: y, left: x, transform: 'translate(-50%, -50%)' }}
+                    onClick={() => window.location.href = url}>
+                    {text}
+                </button>
+            );
+        }
+    }
 
     function showPlayAgainButton(url, text) {
-        const x = SCREEN_WIDTH/2
-        const y = SCREEN_HEIGHT/2
+        const x = SCREEN_WIDTH / 2;
+        const y = SCREEN_HEIGHT / 2;
         ReactDOM.render(<PlayAgainButton x={x} y={y} url={url} text={text} />, document.getElementById('root'));
     }
 

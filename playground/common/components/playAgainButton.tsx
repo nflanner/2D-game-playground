@@ -7,19 +7,14 @@ interface PlayAgainButtonProps {
   text: string;
 }
 
-class PlayAgainButton extends React.Component<PlayAgainButtonProps> {
-  render() {
-    const { x, y, url, text } = this.props;
-    return (
-      <button
-        className="bg-green-200 hover:bg-green-500 text-white font-bold py-2 px-4 rounded border border-solid border-green-700"
-        style={{ position: 'absolute', top: y, left: x, transform: 'translate(-50%, -50%)' }}
-        onClick={() => window.location.href = url}
-      >
-        {text}
-      </button>
-    );
-  }
-}
+const PlayAgainButtonPlaceholder: React.FC<PlayAgainButtonProps> = ({ x, y, url, text }) => (
+  <button
+    className="bg-green-200 hover:bg-green-500 text-white font-bold py-2 px-4 rounded border border-solid border-green-700"
+    style={{ position: 'absolute', top: y, left: x, transform: 'translate(-50%, -50%)' }}
+    onClick={() => (window.location.href = url)}
+  >
+    {text}
+  </button>
+);
 
-export default PlayAgainButton;
+export default PlayAgainButtonPlaceholder;
